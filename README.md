@@ -109,8 +109,8 @@ lib/
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/nutriapp.git
-   cd nutriapp
+   git clone https://github.com/kaiocolombari/flutterNutriApp.git
+   cd flutterNutriApp
    ```
 
 2. **Instale as dependências:**
