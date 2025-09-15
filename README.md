@@ -168,5 +168,3 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ---
 
 ⭐ **Dê uma estrela se este projeto te ajudou!**
-
-Feito com ❤️ usando Flutter
