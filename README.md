@@ -109,8 +109,8 @@ lib/
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/nutriapp.git
-   cd nutriapp
+   git clone https://github.com/kaiocolombari/flutterNutriApp.git
+   cd flutterNutriApp
    ```
 
 2. **Instale as dependências:**
@@ -158,12 +158,6 @@ Contribuições são bem-vindas! Sinta-se à vontade para:
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## 👨‍💻 **Autor**
-
-**Seu Nome**
-- LinkedIn: [seu-linkedin](https://linkedin.com/in/seu-usuario)
-- Email: seu-email@example.com
-
 ## 🙏 **Agradecimentos**
 
 - Flutter Community
@@ -174,5 +168,3 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ---
 
 ⭐ **Dê uma estrela se este projeto te ajudou!**
-
-Feito com ❤️ usando Flutter
