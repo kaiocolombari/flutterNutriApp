@@ -158,12 +158,6 @@ Contribuições são bem-vindas! Sinta-se à vontade para:
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## 👨‍💻 **Autor**
-
-**Seu Nome**
-- LinkedIn: [seu-linkedin](https://linkedin.com/in/seu-usuario)
-- Email: seu-email@example.com
-
 ## 🙏 **Agradecimentos**
 
 - Flutter Community
