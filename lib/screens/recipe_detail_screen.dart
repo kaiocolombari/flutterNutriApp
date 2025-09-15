@@ -80,11 +80,11 @@ class RecipeDetailScreen extends StatelessWidget {
                     ).toList(),
                   ),
                   const SizedBox(height: 24),
-                  _buildSection('Ingredients', _buildIngredients()),
+                  _buildSection('Ingredientes', _buildIngredients()),
                   const SizedBox(height: 24),
-                  _buildSection('Instructions', _buildInstructions()),
+                  _buildSection('Instruções', _buildInstructions()),
                   const SizedBox(height: 24),
-                  _buildSection('Nutrition Facts', _buildNutrition()),
+                  _buildSection('Informações Nutricionais', _buildNutrition()),
                 ],
               ),
             ),
@@ -182,13 +182,13 @@ class RecipeDetailScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            _buildNutritionRow('Calories', '${nutrition.calories} kcal'),
-            _buildNutritionRow('Protein', '${nutrition.protein}g'),
-            _buildNutritionRow('Carbohydrates', '${nutrition.carbs}g'),
-            _buildNutritionRow('Fat', '${nutrition.fat}g'),
-            if (nutrition.fiber > 0) _buildNutritionRow('Fiber', '${nutrition.fiber}g'),
-            if (nutrition.sugar > 0) _buildNutritionRow('Sugar', '${nutrition.sugar}g'),
-            if (nutrition.sodium > 0) _buildNutritionRow('Sodium', '${nutrition.sodium}mg'),
+            _buildNutritionRow('Calorias', '${nutrition.calories} kcal'),
+            _buildNutritionRow('Proteína', '${nutrition.protein}g'),
+            _buildNutritionRow('Carboidratos', '${nutrition.carbs}g'),
+            _buildNutritionRow('Gordura', '${nutrition.fat}g'),
+            if (nutrition.fiber > 0) _buildNutritionRow('Fibra', '${nutrition.fiber}g'),
+            if (nutrition.sugar > 0) _buildNutritionRow('Açúcar', '${nutrition.sugar}g'),
+            if (nutrition.sodium > 0) _buildNutritionRow('Sódio', '${nutrition.sodium}mg'),
           ],
         ),
       ),
@@ -212,9 +212,9 @@ class RecipeDetailScreen extends StatelessWidget {
     // For now, just show a snackbar
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text('Added ${recipe.title} ingredients to shopping list'),
+        content: Text('Ingredientes de ${recipe.title} adicionados à lista de compras'),
         action: SnackBarAction(
-          label: 'View',
+          label: 'Ver',
           onPressed: () {
             // Navigate to shopping list screen (not implemented)
           },

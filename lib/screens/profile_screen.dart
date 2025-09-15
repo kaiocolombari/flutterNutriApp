@@ -42,7 +42,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Profile'),
+        title: const Text('Perfil'),
         actions: [
           IconButton(
             icon: const Icon(Icons.save),
@@ -81,7 +81,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             radius: 50,
             backgroundColor: Theme.of(context).primaryColor,
             child: Text(
-              user?.name?.substring(0, 1).toUpperCase() ?? 'U',
+              user?.name?.isNotEmpty == true ? user!.name!.substring(0, 1).toUpperCase() : 'U',
               style: const TextStyle(
                 fontSize: 32,
                 color: Colors.white,
@@ -117,7 +117,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Personal Information',
+              'Informações Pessoais',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -127,10 +127,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
             TextFormField(
               controller: _nameController,
               decoration: const InputDecoration(
-                labelText: 'Name',
+                labelText: 'Nome',
                 border: OutlineInputBorder(),
               ),
-              validator: (value) => value?.isEmpty ?? true ? 'Please enter your name' : null,
+              validator: (value) => value?.isEmpty ?? true ? 'Por favor, digite seu nome' : null,
             ),
             const SizedBox(height: 16),
             TextFormField(
@@ -139,16 +139,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 labelText: 'Email',
                 border: OutlineInputBorder(),
               ),
-              validator: (value) => value?.isEmpty ?? true ? 'Please enter your email' : null,
+              validator: (value) => value?.isEmpty ?? true ? 'Por favor, digite seu email' : null,
             ),
             const SizedBox(height: 16),
             DropdownButtonFormField<String>(
               value: _gender,
               decoration: const InputDecoration(
-                labelText: 'Gender',
+                labelText: 'Gênero',
                 border: OutlineInputBorder(),
               ),
-              items: ['Male', 'Female', 'Other'].map((gender) {
+              items: ['Masculino', 'Feminino', 'Outro'].map((gender) {
                 return DropdownMenuItem(
                   value: gender,
                   child: Text(gender),
@@ -170,7 +170,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Health Statistics',
+              'Estatísticas de Saúde',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -183,7 +183,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   child: TextFormField(
                     controller: _ageController,
                     decoration: const InputDecoration(
-                      labelText: 'Age',
+                      labelText: 'Idade',
                       border: OutlineInputBorder(),
                     ),
                     keyboardType: TextInputType.number,
@@ -194,7 +194,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   child: TextFormField(
                     controller: _heightController,
                     decoration: const InputDecoration(
-                      labelText: 'Height (cm)',
+                      labelText: 'Altura (cm)',
                       border: OutlineInputBorder(),
                     ),
                     keyboardType: TextInputType.number,
@@ -209,7 +209,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   child: TextFormField(
                     controller: _weightController,
                     decoration: const InputDecoration(
-                      labelText: 'Weight (kg)',
+                      labelText: 'Peso (kg)',
                       border: OutlineInputBorder(),
                     ),
                     keyboardType: TextInputType.number,
@@ -220,7 +220,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   child: TextFormField(
                     controller: _goalController,
                     decoration: const InputDecoration(
-                      labelText: 'Daily Goal (cal)',
+                      labelText: 'Meta Diária (cal)',
                       border: OutlineInputBorder(),
                     ),
                     keyboardType: TextInputType.number,
@@ -229,9 +229,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ],
             ),
             const SizedBox(height: 16),
-            _buildStatDisplay('BMI', userService.calculateBMI().toStringAsFixed(1)),
-            _buildStatDisplay('BMR', '${userService.calculateBMR()} cal'),
-            _buildStatDisplay('BMI Category', userService.getBMICategory()),
+            _buildStatDisplay('IMC', userService.calculateBMI().toStringAsFixed(1)),
+            _buildStatDisplay('TMB', '${userService.calculateBMR()} cal'),
+            _buildStatDisplay('Categoria IMC', userService.getBMICategory()),
           ],
         ),
       ),
@@ -265,7 +265,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Dietary Preferences',
+              'Preferências Alimentares',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -274,7 +274,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             const SizedBox(height: 16),
             Wrap(
               spacing: 8,
-              children: ['Vegetarian', 'Vegan', 'Gluten-Free', 'Keto', 'Paleo', 'Mediterranean']
+              children: ['Vegetariano', 'Vegano', 'Sem Glúten', 'Keto', 'Paleo', 'Mediterrâneo']
                   .map((preference) => Chip(label: Text(preference)))
                   .toList(),
             ),
@@ -300,7 +300,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
 
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Profile updated successfully!')),
+      const SnackBar(content: Text('Perfil atualizado com sucesso!')),
     );
   }
 

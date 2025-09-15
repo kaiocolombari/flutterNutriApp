@@ -53,7 +53,7 @@ class HomeScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Hello, ${user?.name ?? 'User'}!',
+            'Olá, ${user?.name ?? 'Usuário'}!',
             style: const TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -62,7 +62,7 @@ class HomeScreen extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            'Ready to cook something healthy today?',
+            'Pronto para cozinhar algo saudável hoje?',
             style: TextStyle(
               fontSize: 16,
               color: Colors.white.withOpacity(0.9),
@@ -71,9 +71,9 @@ class HomeScreen extends StatelessWidget {
           const SizedBox(height: 16),
           Row(
             children: [
-              _buildStatCard('Daily Goal', '${user?.dailyCalorieGoal ?? 0} cal'),
+              _buildStatCard('Meta Diária', '${user?.dailyCalorieGoal ?? 0} cal'),
               const SizedBox(width: 16),
-              _buildStatCard('BMI', userService.calculateBMI().toStringAsFixed(1)),
+              _buildStatCard('IMC', userService.calculateBMI().toStringAsFixed(1)),
             ],
           ),
         ],
@@ -139,7 +139,7 @@ class HomeScreen extends StatelessWidget {
               const Icon(Icons.smart_toy, color: Colors.blue),
               const SizedBox(width: 8),
               const Text(
-                'AI Suggestions for You',
+                'Sugestões de IA para Você',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -149,7 +149,7 @@ class HomeScreen extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           const Text(
-            'Personalized recipes based on your goals',
+            'Receitas personalizadas baseadas nas suas metas',
             style: TextStyle(
               fontSize: 14,
               color: Colors.grey,
@@ -219,7 +219,7 @@ class HomeScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            'Featured Recipes',
+            'Receitas em Destaque',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -313,10 +313,10 @@ class HomeScreen extends StatelessWidget {
 
   Widget _buildCategories(BuildContext context) {
     final categories = [
-      {'name': 'Vegetarian', 'icon': Icons.eco, 'color': Colors.green},
-      {'name': 'Protein', 'icon': Icons.fitness_center, 'color': Colors.red},
-      {'name': 'Quick', 'icon': Icons.timer, 'color': Colors.blue},
-      {'name': 'Healthy', 'icon': Icons.favorite, 'color': Colors.pink},
+      {'name': 'Vegetariano', 'icon': Icons.eco, 'color': Colors.green},
+      {'name': 'Proteína', 'icon': Icons.fitness_center, 'color': Colors.red},
+      {'name': 'Rápido', 'icon': Icons.timer, 'color': Colors.blue},
+      {'name': 'Saudável', 'icon': Icons.favorite, 'color': Colors.pink},
     ];
 
     return Padding(
@@ -325,7 +325,7 @@ class HomeScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            'Categories',
+            'Categorias',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -389,10 +389,10 @@ class HomeScreen extends StatelessWidget {
 
   Widget _buildNutritionTips(BuildContext context) {
     final tips = [
-      'Drink at least 8 glasses of water daily',
-      'Include colorful vegetables in every meal',
-      'Choose whole grains over refined grains',
-      'Limit processed foods and added sugars',
+      'Beba pelo menos 8 copos de água por dia',
+      'Inclua vegetais coloridos em todas as refeições',
+      'Escolha grãos integrais em vez de grãos refinados',
+      'Limite alimentos processados e açúcares adicionados',
     ];
 
     return Padding(
@@ -401,7 +401,7 @@ class HomeScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            'Nutrition Tips',
+            'Dicas de Nutrição',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,

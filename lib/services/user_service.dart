@@ -27,12 +27,12 @@ class UserService extends ChangeNotifier {
         // Create default user
         _currentUser = User(
           id: '1',
-          name: 'John Doe',
-          email: 'john@example.com',
+          name: 'João Silva',
+          email: 'joao@example.com',
           age: 30,
           height: 175.0,
           weight: 70.0,
-          gender: 'Male',
+          gender: 'Masculino',
           dailyCalorieGoal: 2000,
         );
         await _saveUser();

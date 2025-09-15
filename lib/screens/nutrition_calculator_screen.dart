@@ -22,7 +22,7 @@ class _NutritionCalculatorScreenState extends State<NutritionCalculatorScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Nutrition Calculator'),
+        title: const Text('Calculadora Nutricional'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
@@ -34,7 +34,7 @@ class _NutritionCalculatorScreenState extends State<NutritionCalculatorScreen> {
               const SizedBox(height: 24),
             ],
             const Text(
-              'Meal Calculator',
+              'Calculadora de Refeições',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -44,19 +44,19 @@ class _NutritionCalculatorScreenState extends State<NutritionCalculatorScreen> {
             TextField(
               controller: _mealController,
               decoration: const InputDecoration(
-                labelText: 'Add ingredient (e.g., 100g chicken breast)',
+                labelText: 'Adicionar ingrediente (ex: 100g peito de frango)',
                 border: OutlineInputBorder(),
               ),
             ),
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: _addIngredient,
-              child: const Text('Add Ingredient'),
+              child: const Text('Adicionar Ingrediente'),
             ),
             const SizedBox(height: 24),
             if (_mealIngredients.isNotEmpty) ...[
               const Text(
-                'Meal Ingredients',
+                'Ingredientes da Refeição',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -81,7 +81,7 @@ class _NutritionCalculatorScreenState extends State<NutritionCalculatorScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Your Stats',
+              'Suas Estatísticas',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -91,13 +91,13 @@ class _NutritionCalculatorScreenState extends State<NutritionCalculatorScreen> {
             Row(
               children: [
                 Expanded(
-                  child: _buildStatItem('BMI', userService.calculateBMI().toStringAsFixed(1)),
+                  child: _buildStatItem('IMC', userService.calculateBMI().toStringAsFixed(1)),
                 ),
                 Expanded(
-                  child: _buildStatItem('BMR', '${userService.calculateBMR()} cal'),
+                  child: _buildStatItem('TMB', '${userService.calculateBMR()} cal'),
                 ),
                 Expanded(
-                  child: _buildStatItem('Goal', '${user.dailyCalorieGoal} cal'),
+                  child: _buildStatItem('Meta', '${user.dailyCalorieGoal} cal'),
                 ),
               ],
             ),
@@ -151,19 +151,19 @@ class _NutritionCalculatorScreenState extends State<NutritionCalculatorScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Total Nutrition',
+              'Nutrição Total',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(height: 16),
-            _buildNutritionRow('Calories', '${_totalNutrition.calories.toStringAsFixed(0)} kcal'),
-            _buildNutritionRow('Protein', '${_totalNutrition.protein.toStringAsFixed(1)}g'),
-            _buildNutritionRow('Carbohydrates', '${_totalNutrition.carbs.toStringAsFixed(1)}g'),
-            _buildNutritionRow('Fat', '${_totalNutrition.fat.toStringAsFixed(1)}g'),
+            _buildNutritionRow('Calorias', '${_totalNutrition.calories.toStringAsFixed(0)} kcal'),
+            _buildNutritionRow('Proteína', '${_totalNutrition.protein.toStringAsFixed(1)}g'),
+            _buildNutritionRow('Carboidratos', '${_totalNutrition.carbs.toStringAsFixed(1)}g'),
+            _buildNutritionRow('Gordura', '${_totalNutrition.fat.toStringAsFixed(1)}g'),
             if (_totalNutrition.fiber > 0)
-              _buildNutritionRow('Fiber', '${_totalNutrition.fiber.toStringAsFixed(1)}g'),
+              _buildNutritionRow('Fibra', '${_totalNutrition.fiber.toStringAsFixed(1)}g'),
           ],
         ),
       ),

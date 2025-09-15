@@ -26,15 +26,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'NutriApp',
+      title: 'NutriApp - Receitas & Nutrição',
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       home: const MainScreen(),
       routes: {
         '/home': (context) => const HomeScreen(),
-        '/recipes': (context) => const RecipeListScreen(),
-        '/calculator': (context) => const NutritionCalculatorScreen(),
-        '/profile': (context) => const ProfileScreen(),
+        '/receitas': (context) => const RecipeListScreen(),
+        '/calculadora': (context) => const NutritionCalculatorScreen(),
+        '/perfil': (context) => const ProfileScreen(),
       },
     );
   }
@@ -71,19 +71,19 @@ class _MainScreenState extends State<MainScreen> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: 'Início',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            label: 'Recipes',
+            label: 'Receitas',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.calculate),
-            label: 'Calculator',
+            label: 'Calculadora',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Profile',
+            label: 'Perfil',
           ),
         ],
         currentIndex: _selectedIndex,

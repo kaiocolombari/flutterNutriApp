@@ -36,7 +36,7 @@ class _RecipeListScreenState extends State<RecipeListScreen> {
             child: TextField(
               controller: _searchController,
               decoration: InputDecoration(
-                hintText: 'Search recipes...',
+                hintText: 'Buscar receitas...',
                 prefixIcon: const Icon(Icons.search),
                 suffixIcon: Row(
                   mainAxisSize: MainAxisSize.min,
@@ -67,7 +67,7 @@ class _RecipeListScreenState extends State<RecipeListScreen> {
           if (_showFilters) _buildFilters(),
           Expanded(
             child: filteredRecipes.isEmpty
-                ? const Center(child: Text('No recipes found'))
+                ? const Center(child: Text('Nenhuma receita encontrada'))
                 : ListView.builder(
                     itemCount: filteredRecipes.length,
                     itemBuilder: (context, index) {
@@ -82,7 +82,7 @@ class _RecipeListScreenState extends State<RecipeListScreen> {
   }
 
   Widget _buildFilters() {
-    final categories = ['Vegetarian', 'Vegan', 'Gluten-Free', 'Quick', 'Healthy', 'Protein'];
+    final categories = ['Vegetariano', 'Vegano', 'Sem Glúten', 'Rápido', 'Saudável', 'Proteína'];
 
     return Container(
       padding: const EdgeInsets.all(16),
@@ -90,7 +90,7 @@ class _RecipeListScreenState extends State<RecipeListScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('Categories', style: TextStyle(fontWeight: FontWeight.bold)),
+          const Text('Categorias', style: TextStyle(fontWeight: FontWeight.bold)),
           const SizedBox(height: 8),
           Wrap(
             spacing: 8,
