@@ -118,11 +118,9 @@ class HomeScreen extends StatelessWidget {
     final recipeService = Provider.of<RecipeService>(context);
     final userService = Provider.of<UserService>(context);
 
-    // Simple AI suggestion: suggest recipes based on user's calorie goal
     final user = userService.currentUser;
     final suggestedRecipes = recipeService.recipes.where((recipe) {
       if (user == null) return true;
-      // Suggest recipes that are within 20% of daily calorie goal per meal
       final mealCalories = user.dailyCalorieGoal / 3;
       return recipe.nutritionInfo.calories <= mealCalories * 1.2;
     }).take(3).toList();

@@ -208,15 +208,13 @@ class RecipeDetailScreen extends StatelessWidget {
     );
   }
   void _addToShoppingList(BuildContext context, Recipe recipe) {
-    // In a real app, this would add to a persistent shopping list
-    // For now, just show a snackbar
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('Ingredientes de ${recipe.title} adicionados à lista de compras'),
         action: SnackBarAction(
           label: 'Ver',
           onPressed: () {
-            // Navigate to shopping list screen (not implemented)
+            Navigator.pushNamed(context, '/shopping_list');
           },
         ),
       ),

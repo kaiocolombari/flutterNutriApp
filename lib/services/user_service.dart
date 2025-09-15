@@ -24,7 +24,6 @@ class UserService extends ChangeNotifier {
       if (userJson != null) {
         _currentUser = User.fromJson(json.decode(userJson));
       } else {
-        // Create default user
         _currentUser = User(
           id: '1',
           name: 'João Silva',
@@ -131,7 +130,6 @@ class UserService extends ChangeNotifier {
   int calculateBMR() {
     if (_currentUser == null) return 0;
 
-    // Mifflin-St Jeor Equation
     final weight = _currentUser!.weight;
     final height = _currentUser!.height;
     final age = _currentUser!.age;

@@ -187,11 +187,9 @@ class _NutritionCalculatorScreenState extends State<NutritionCalculatorScreen> {
   }
 
   void _addIngredient() {
-    // Simple parsing - in a real app, you'd have a database of ingredients
     final input = _mealController.text.trim();
     if (input.isEmpty) return;
 
-    // Mock ingredient creation - replace with actual ingredient lookup
     final ingredient = Ingredient(
       name: input,
       quantity: 100,
